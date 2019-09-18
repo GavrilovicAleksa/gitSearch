@@ -1,0 +1,6 @@
+<img>
+<button *ngIf="!auth.isAuth()" [routerLink]="['/login']">Log In</button>
+<button *ngIf="!auth.isAuth()"[routerLink]="['/register']">Register</button>
+<button *ngIf="auth.isAuth()" (click)="auth.logout()">Log Out</button>
+<button [routerLink]="['/savedUsers']" *ngIf="auth.isAuth()">Saved users</button>
+<button [routerLink]="['/savedRepos']"*ngIf="auth.isAuth()" >Saved repos</button>

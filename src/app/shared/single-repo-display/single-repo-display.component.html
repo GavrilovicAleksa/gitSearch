@@ -1,0 +1,8 @@
+<div>
+  <p>
+      Name {{singleRepo.name}}
+    </p>
+    <button *ngIf="auth.isAuth() && pageType" (click)="addUser()" [disabled]="markerCheck()">Favorite</button>
+    <button *ngIf="!pageType" (click)="removeUser()">Remove</button>
+</div>
+

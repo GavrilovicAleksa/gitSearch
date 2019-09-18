@@ -1,0 +1,11 @@
+<div>
+  <p>
+    {{singleUser.login}}
+  </p>
+  <img src="{{singleUser.avatar_url}}">
+  <p>{{singleUser.score}}</p>
+  <button [routerLink]="['/user-repos']" (click)="addRepoUrl()" *ngIf="pageType">List Repos</button><br>
+  <button *ngIf="auth.isAuth() && pageType" (click)="addUser()" [disabled]="markerCheck()">Favorite</button>
+  <button *ngIf="!pageType" (click)="removeUser()">Remove</button>
+</div>
+

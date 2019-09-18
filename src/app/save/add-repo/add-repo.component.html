@@ -1,0 +1,19 @@
+<div>
+  <form [formGroup]="addRepoForm" (ngSubmit)="onSubmit()">
+    <input type="text" formControlName="name">
+    <select formControlName="language">
+      <option selected>Select language</option>
+      <option *ngFor="let language of programmingLanguages" [value]="language">{{language}}</option>
+    </select>
+    <input type="text" formControlName="open_isues">
+    <label>watecher</label><input type="text" formControlName="watchers_count">
+    <label>Size</label><input type="text" formControlName="size">
+    <div formGroupName="owner">
+        <input type="text" formControlName="login">
+      <div *ngFor="let type of types">
+        <input type="radio" [value]="type" formControlName="type">{{type}}<br>
+      </div>
+    </div>
+    <button [disabled]="!marker" type="submit">Add a repo!</button>
+  </form>
+</div>

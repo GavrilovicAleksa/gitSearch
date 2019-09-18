@@ -1,0 +1,12 @@
+<div>
+  <form (ngSubmit)="onSignUp(f)" #f = "ngForm">
+  <input type="text" id="email" name="email" placeholder="email" ngModel><br>
+  <input type="password" id="password" name="password" placeholder="password" ngModel><br>
+  <button>{{title}}</button>
+  </form>
+  <ul>
+    <li *ngFor="let item of items | async">
+       {{ item | json }}
+    </li>
+  </ul>
+</div>
