@@ -1,6 +1,32 @@
-<img>
-<button *ngIf="!auth.isAuth()" [routerLink]="['/login']">Log In</button>
-<button *ngIf="!auth.isAuth()"[routerLink]="['/register']">Register</button>
-<button *ngIf="auth.isAuth()" (click)="auth.logout()">Log Out</button>
-<button [routerLink]="['/savedUsers']" *ngIf="auth.isAuth()">Saved users</button>
-<button [routerLink]="['/savedRepos']"*ngIf="auth.isAuth()" >Saved repos</button>
+<nav class="navbar navbar-default navbar-fixed-top ">
+    <div class="container">
+        <div div id="navbar" class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-right">
+            <a *ngIf="!auth.isAuth()" [routerLink]="['/login']">Log In</a>
+            <a *ngIf="!auth.isAuth()"[routerLink]="['/register']">Register</a>
+    </ul>
+
+</div>
+</div>
+</nav>
+
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+              <a [routerLink]="['/']">
+                  <img src="assets/logo.png" class="container-img">
+              </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+             
+              <ul class="nav navbar-nav navbar-right">
+                <li><a *ngIf="!auth.isAuth()" [routerLink]="['/login']">Log In</a></li>
+                <li><a *ngIf="!auth.isAuth()"[routerLink]="['/register']">Register</a></li>
+                <li><a *ngIf="auth.isAuth()" (click)="auth.logout()">Log Out</a></li>
+                <li><a [routerLink]="['/savedUsers']" *ngIf="auth.isAuth()">Saved users</a></li>
+                <li><a [routerLink]="['/savedRepos']"*ngIf="auth.isAuth()" >Saved repos</a></li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div>
+        </nav>

@@ -1,1 +1,8 @@
-<app-single-user-display *ngFor="let item of usersArr" [singleUser]="item"></app-single-user-display>
+
+<div class="container">
+        
+    <input type="text" [(ngModel)]="UserObj.name"><button [routerLink]="['/user', UserObj.name]">Search</button>
+    <app-single-user-display [singleUser]="item" class="user" *ngFor="let item of usersArr"></app-single-user-display>
+</div>
+
+    
