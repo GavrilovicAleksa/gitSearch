@@ -10,11 +10,13 @@ import { UserManageService } from './services/user-manage.service';
 import { UserSearchService } from './services/user-search.service';
 import { UserLinksService } from './services/user-links.service';
 import { RepoManageService } from './services/repo-manage.service';
+import { SizeConversionPipe } from './pipes/size-conversion.pipe';
 
 @NgModule({
   declarations: [
     SingleUserDisplayComponent,
-    SingleRepoDisplayComponent
+    SingleRepoDisplayComponent,
+    SizeConversionPipe
 ],
   imports: [
     RouterModule,
