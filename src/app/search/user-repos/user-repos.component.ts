@@ -15,6 +15,8 @@ export class UserReposComponent implements OnInit {
 
   repoArr
 
+  owner: String
+
   reposSubscription: Subscription
   usernameSubscription: Subscription
 
@@ -31,6 +33,7 @@ export class UserReposComponent implements OnInit {
     this.reposSubscription = this.userRepos.getRepos(this.username).subscribe(
       (response: Response) => {
         this.repoArr = response;
+        this.owner = this.repoArr[0].owner.login;
         console.log(this.repoArr);
       }
     );

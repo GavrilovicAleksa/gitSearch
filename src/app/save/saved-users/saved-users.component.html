@@ -1,1 +1,7 @@
-<app-single-user-display *ngFor="let item of usersArr" [singleUser]="item"></app-single-user-display>
+
+<div class="container">
+        <h2>Your saved users</h2>
+        <div class="user row"  *ngFor="let item of usersArr">
+            <app-single-user-display [singleUser]="item"></app-single-user-display>
+        </div>
+    </div>

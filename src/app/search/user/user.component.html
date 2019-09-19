@@ -1,8 +1,13 @@
 
 <div class="container">
-        
-    <input type="text" [(ngModel)]="UserObj.name"><button [routerLink]="['/user', UserObj.name]">Search</button>
-    <app-single-user-display [singleUser]="item" class="user" *ngFor="let item of usersArr"></app-single-user-display>
+    <p>We are searching for {{UserObj.name}}</p>
+    <p> Number of results: {{numberOfResults}}</p>
+    <div class="form-inline">
+            <input type="text" class="form-control" [(ngModel)]="UserObj.name"><button [routerLink]="['/user', UserObj.name]" class="btn btn-primary">Search</button>
+    </div>
+    <div class="user row"  *ngFor="let item of usersArr">
+        <app-single-user-display [singleUser]="item"></app-single-user-display>
+    </div>
 </div>
 
     

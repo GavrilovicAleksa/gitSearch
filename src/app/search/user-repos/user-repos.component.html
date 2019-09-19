@@ -1,1 +1,6 @@
-<app-single-repo-display *ngFor='let item of repoArr' [singleRepo]='item'></app-single-repo-display>
+<div class="container">
+        <h2>We are displaying {{owner}}'s repositories</h2>
+        <div class="user row" *ngFor='let item of repoArr' >
+            <app-single-repo-display [singleRepo]='item'></app-single-repo-display>
+        </div>
+    </div>

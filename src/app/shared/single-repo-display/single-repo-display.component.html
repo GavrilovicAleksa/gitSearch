@@ -1,8 +1,28 @@
-<div>
-  <p>
-      Name {{singleRepo.name}}
+<div class="col-md-4">
+    <h3>Name: {{singleRepo.name}}</h3>
+    <p class="list-group-item-text title">Language: {{singleRepo.language}}</p>
+  </div>
+  <div class="col-md-2">
+    <p  class="list-group-item-text title">
+      Isuess: {{singleRepo.open_issues}}
     </p>
-    <button *ngIf="auth.isAuth() && pageType" (click)="addUser()" [disabled]="markerCheck()">Favorite</button>
-    <button *ngIf="!pageType" (click)="removeUser()">Remove</button>
-</div>
-
+    <p  class="list-group-item-text title">
+        Watchers: {{singleRepo.watchers_count}}
+      </p>
+      <p  class="list-group-item-text title">
+          Size: {{singleRepo.size}}
+        </p>  
+  </div>
+  <div class="col-md-4">
+      <p  class="list-group-item-text title">
+        Created at: {{singleRepo.created_at | date: 'short'}}
+      </p>
+      <p  class="list-group-item-text title">
+          Last update: {{singleRepo.updated_at | date: 'short'}}
+        </p>
+       <a href="{{singleRepo.html_url}}"> <img src="assets/mark.png"> </a>
+    </div>
+  <div class="col-md-2" class="buttonsFav">
+      <button class="btn btn-danger pull-right btnList" *ngIf="auth.isAuth() && pageType" (click)="addUser()" [disabled]="markerCheck()">Favorite</button>
+      <button  class="btn btn-warning pull-right btnList"*ngIf="!pageType" (click)="removeUser()">Remove</button>
+  </div>

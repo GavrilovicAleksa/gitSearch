@@ -1,19 +1,61 @@
-<div>
+<div class="container">
   <form [formGroup]="addRepoForm" (ngSubmit)="onSubmit()">
-    <input type="text" formControlName="name">
-    <select formControlName="language">
-      <option selected>Select language</option>
-      <option *ngFor="let language of programmingLanguages" [value]="language">{{language}}</option>
-    </select>
-    <input type="text" formControlName="open_isues">
-    <label>watecher</label><input type="text" formControlName="watchers_count">
-    <label>Size</label><input type="text" formControlName="size">
-    <div formGroupName="owner">
-        <input type="text" formControlName="login">
-      <div *ngFor="let type of types">
-        <input type="radio" [value]="type" formControlName="type">{{type}}<br>
+    <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
+        <div class="col-sm-10">
+          <input class="form-control" type="text" formControlName="name">
+        </div>
       </div>
-    </div>
-    <button [disabled]="!marker" type="submit">Add a repo!</button>
+      <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Language</label>
+        <div class="col-sm-10">
+            <select class="form-control" formControlName="language">
+                <option selected>Select language</option>
+                <option *ngFor="let language of programmingLanguages" [value]="language">{{language}}</option>
+              </select>
+        </div>
+      </div>
+      <div class="form-group row">
+          <label for="inputEmail3" class="col-sm-2 col-form-label">Issues</label>
+          <div class="col-sm-10">
+              <input class="form-control" type="text" formControlName="open_isues">
+          </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Watchers</label>
+            <div class="col-sm-10">
+                <input class="form-control" type="text" formControlName="watchers_count">
+            </div>
+          </div>
+          <div class="form-group row">
+              <label for="inputEmail3" class="col-sm-2 col-form-label">Size</label>
+              <div class="col-sm-10">
+                <input class="form-control" type="text" formControlName="size">
+              </div>
+            </div>
+                    <fieldset class="form-group">
+                        <div class="row" formGroupName="owner">
+                          <div>
+                              <label for="inputEmail3" class="col-sm-2 col-form-label">Owner Login</label>
+                              <div class="col-sm-10">
+                                <input class="form-control" type="text" formControlName="login">
+                              </div>
+                          </div>
+                          <label class="col-form-label col-sm-2 pt-0">Role</label>
+                          <div class="col-sm-10">
+                            <div class="form-check" *ngFor="let type of types">
+                              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1"  [value]="type" formControlName="type">
+                              <label class="form-check-label" for="gridRadios1">
+                                {{type}}
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </fieldset>
+      <div class="form-group row">
+        <div class="col-sm-10">
+          <button type="submit" [disabled]="!marker" class="btn btn-primary">add a Repo</button>
+        </div>
+      </div>
   </form>
 </div>

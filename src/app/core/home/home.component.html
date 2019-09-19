@@ -1,10 +1,23 @@
-<div class="container">
-
-        <!-- Main component for a primary marketing message or call to action -->
+<div class="container marg">
         <div class="jumbotron">
-          <h1>GitSearch</h1><br><br>
-            <input type="text" [(ngModel)]="name">
-            <button [routerLink]="['/user', name]">Search</button>
+          <div class="row">
+            <div class="col-md-4">
+                <h1>GitSearch</h1>
+                    <h3>Search github users</h3>
+                    <h3>Save users and repos</h3>
+                    <h3>Add custom repos</h3>
+            </div>
+              <div class="col-md-4">
+                <div class="row">
+                    <img src="assets/download.png">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-inline">
+                    <input class="form-control form-control-lg" type="text" [(ngModel)]="name">
+                    <button class="btn btn-primary" [routerLink]="['/user', name]">Search</button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-  
-      </div> <!-- /container -->

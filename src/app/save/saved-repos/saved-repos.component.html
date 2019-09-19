@@ -1,2 +1,7 @@
-<app-single-repo-display *ngFor='let item of reposArr' [singleRepo]='item'></app-single-repo-display>
-<button [routerLink]="['/addRepo']">Add a repo</button>
+<div class="container">
+        <h2>Your saved repositories</h2>
+        <p>Just for fun add a custom repo</p><button class="btn btn-primary" [routerLink]="['/addRepo']">Add a repo</button>
+        <div class="user row" *ngFor='let item of reposArr' >
+            <app-single-repo-display [singleRepo]='item'></app-single-repo-display>
+        </div>
+</div>

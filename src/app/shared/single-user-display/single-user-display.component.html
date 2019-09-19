@@ -1,23 +1,16 @@
-<!-- <div>
-  <p>
-    {{singleUser.login}}
-  </p>
-  <img src="{{singleUser.avatar_url}}">
-  <p>{{singleUser.score}}</p>
-  <button [routerLink]="['/user-repos']" (click)="addRepoUrl()" *ngIf="pageType">List Repos</button><br>
-  <button *ngIf="auth.isAuth() && pageType" (click)="addUser()" [disabled]="markerCheck()">Favorite</button>
-  <button *ngIf="!pageType" (click)="removeUser()">Remove</button>
-</div> -->
-<div class="user">
-    <div class="col-md-10">
+    <div class="col-md-6">
         <img src="{{singleUser.avatar_url}}" width="150" height="150" class="pull-left photo">
         <h4 >{{singleUser.login}}</h4>
-        <p class="list-group-item-text title">Faculty Advisor for the Hello Kitty Fan Club</p>
+        <p class="list-group-item-text title">Git Sore: {{singleUser.score}}</p>
       </div>
-      <div class="col-md-2">
-          <button class="btn" [routerLink]="['/user-repos']" (click)="addRepoUrl()" *ngIf="pageType" class="btn btn-primary">List Repos</button>
-          <button *ngIf="auth.isAuth() && pageType" (click)="addUser()" [disabled]="markerCheck()" class="btn btn-danger">Favorite</button>
-          <button class="btn btn-warning" *ngIf="!pageType" (click)="removeUser()">Remove</button>
+      <div class="col-md-4">
+          <p class="list-group-item-text title">User type: {{singleUser.type}}</p>
+          <a href="{{singleUser.html_url}}"><img src="assets/mark.png"></a>
+        </div>
+      <div class="col-md-2" class="buttonsFav">
+          <button class="btnList" [routerLink]="['/user-repos']" (click)="addRepoUrl()" *ngIf="pageType" class="btn btn-primary">List Repos</button>
+          <button *ngIf="auth.isAuth() && pageType" (click)="addUser()" [disabled]="markerCheck()" class="bntList btn btn-danger">Favorite</button>
+          <button class="btnList btn btn-warning" *ngIf="!pageType" (click)="removeUser()">Remove</button>
       </div>
-</div>
+
 

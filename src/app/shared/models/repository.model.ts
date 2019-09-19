@@ -14,7 +14,7 @@ export class Repository{
 
     html_url: string
 
-    open_isues: number
+    open_issues: number
 
     watchers_count: number
 

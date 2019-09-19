@@ -1,0 +1,12 @@
+.user{
+	border:1px solid grey;
+	min-height:100px;
+	margin-top:10px;
+	margin-bottom:5px;
+	border-radius:10px;
+}  
+.container{
+	min-height: 50px;
+	margin-top:50px;
+	width:700px;
+}

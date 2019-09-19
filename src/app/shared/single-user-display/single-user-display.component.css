@@ -1,7 +1,5 @@
-body {
-    font-family: 'Source Sans Pro', sans-serif;
-  }
-  h1 {
+
+h1 {
     text-align:center;
   }
   .row {
@@ -12,7 +10,9 @@ body {
     border-radius: 45px;
     margin-right: 20px;
     width: 90px;
-    height:90px
+    height:90px;
+    margin-top:5px;
+    margin-bottom:5px;
   }
   .form-control { 
     width:30%;
@@ -27,13 +27,12 @@ body {
     font-weight: 700;
     margin-top:10px;
   }
-  .btn-more {
-    margin-top:10px;
-    width: 100%
+  .btnList {
+    margin:20px;
   }
   .label {
     font-weight: normal;
   }
-.user{
-    padding-top:100px;
-}  
+  .buttonsFav{
+    padding-top: 5px;
+  }
