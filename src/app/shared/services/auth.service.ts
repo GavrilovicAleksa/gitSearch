@@ -23,6 +23,8 @@ export class AuthService {
 
   userId: string;
 
+  errorStr = "";
+
   signUpUser(email: string, password: string){
     this.afAuth.auth.createUserWithEmailAndPassword(email, password).then(
       user => {
@@ -32,7 +34,7 @@ export class AuthService {
       }
           )
     .catch(
-      error => console.log(error)
+      error => {this.errorStr = error.message}
     );
   }
   login(email: string, password: string) {
@@ -45,7 +47,7 @@ export class AuthService {
         )
       })
       .catch(err => {
-        console.log('Something went wrong:',err.message);
+        this.errorStr = err.message;
       });
   }
   logout(){
